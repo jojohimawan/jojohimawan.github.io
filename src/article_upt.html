@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../dist/output.css" rel="stylesheet">
+    <link href="../node_modules/flowbite/dist/flowbite.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+    <title>Membuat Student Site Dengan Layanan Hosting UPT Komputer PENS</title>
+    <script>
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark')
+    }
+    </script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900">
+    <div class="container mx-auto pb-8 bg-white dark:bg-slate-800">
+        <nav class="pt-20 md:px-10 flex gap-x-5 justify-between" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-3">
+            <li class="inline-flex items-center">
+                <a href="../index.html" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-700 dark:text-gray-400 dark:hover:text-white">
+                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
+                Home
+                </a>
+            </li>
+            <li>
+                <div class="flex items-center">
+                <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                <a href="#" class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-700 md:ml-2 dark:text-gray-400 dark:hover:text-white">Articles</a>
+                </div>
+            </li>
+            <li aria-current="page">
+                <div class="flex items-center">
+                <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                <span id="crumb_upt" class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">Membuat Student Site Dengan Layanan Hosting UPT Komputer PENS</span>
+                </div>
+            </li>
+            </ol>
+            <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+            </button>
+        </nav>
+  
+        <div class="pt-20 px-20 md:px-44 ">
+            <div class="pl-2 border-l-2 sm:max-w-1/2 md:max-w-3xl mx-auto border-gray-400 dark:border-gray-500">
+                <a href="">
+                    <p class="text-gray-400 dark:text-gray-500">16 September 2022</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="pt-6 px-20 md:px-44 ">
+            <h1 id="title_upt" class="text-4xl sm:text-5xl sm:max-w-1/2 md:max-w-3xl mx-auto font-bold tracking-tight text-gray-800 dark:text-white">Membuat Student Site Dengan Layanan Hosting UPT Komputer PENS</h1>
+        </div>
+
+        <div class="pt-8 px-20 md:px-44">
+            <h2 class="text-lg text-justify font-medium sm:max-w-1/2 md:max-w-3xl mx-auto mt-8 mb-6 text-gray-700 dark:text-white">Apa Itu Hosting UPT Komputer PENS?</h2>
+            <p class="text-justify sm:max-w-1/2 md:max-w-3xl mx-auto mb-6 text-gray-700 dark:text-gray-400">Sebagai politeknik berbasis teknik terbaik di Indonesia, tentu saja PENS memiliki segudang fasilitas untuk menunjang kegiatan perkuliahan. Terlebih dalam fasilitas teknologi. Salah satu dari fasilitas tersebut adalah layanan hosting website dan cloud storage bernama FTP PENS.</p>
+            <img src="../img/jbt_upt.jpg" alt="" class="object-cover mb-6 mx-auto w-[768px] h-auto rounded-2xl">
+            <p class="text-justify sm:max-w-1/2 md:max-w-3xl mx-auto mb-6 text-gray-700 dark:text-gray-400">Pada dasarnya Web FTP PENS adalah layanan khusus civitas akademika PENS guna menunjang perkuliahan di bidang IT. Dengan menggunakan fasilitas ini, mahasiswa aktif dapat membuat personal website mereka <span class="italic">go live. </span>Selain itu, mahasiswa juga dapat mengunggah file hingga kurang lebih 90gb.</p>
+            <p class="text-justify sm:max-w-1/2 md:max-w-3xl mx-auto text-gray-700 dark:text-gray-400">Perlu diketahui, Web FTP PENS hanya dapat digunakan oleh mahasiswa aktif PENS yang memiliki NetID dan password terdaftar.</p>
+
+            <h2 class="text-lg text-justify font-medium sm:max-w-1/2 md:max-w-3xl mx-auto mt-8 mb-6 text-gray-700 dark:text-white">Cara Hosting Student Site ke Web FTP PENS</h2>
+            <p class="text-justify sm:max-w-1/2 md:max-w-3xl mx-auto mb-6 text-gray-700 dark:text-gray-400">Caranya cukup mudah dan simpel, kalian cuma butuh NetID terdaftar dan koneksi internet serta file website kalian. Lalu ikuti langkah dibawah ini.</p>
+            <ol class="relative sm:max-w-1/2 md:max-w-3xl mx-auto border-l border-gray-200 dark:border-gray-700">                  
+                <li class="mb-10 ml-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+                    <h2 class="text-lg text-justify font-medium mb-2 text-gray-700 dark:text-white">Siapkan Hasil Coding</h2>
+                    <p class="text-justify text-gray-700 dark:text-gray-400">Pastikan file website statis kalian sudah siap. Jangan lupa halaman landing page kalian harus dengan format penamaan index.html</p>
+                </li>
+                <li class="mb-10 ml-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+                    <h2 class="text-lg text-justify font-medium mb-2 text-gray-700 dark:text-white-700 dark:text-white">Buka Link</h2>
+                    <p class="mb-4 text-justify text-gray-700 dark:text-gray-400 max-w-lg">Kunjungi link Web FTP PENS melalui tombol dibawah ini.</p>
+                    <a href="http://web.student.pens.ac.id/" target="_blank" class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-blue-700 hover:text-white focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-white dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-blue-700 dark:focus:ring-gray-700">Kunjungi</a>
+                </li>
+                <li class="mb-10 ml-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+                    <h2 class="text-lg text-justify font-medium mb-2 text-gray-700 dark:text-white-700 dark:text-white">Pilih Fitur</h2>
+                    <p class="text-justify text-gray-700 dark:text-gray-400 max-w-lg">Cari dan klik pada menu student site. Setelah itu akan diarahkan ke halaman situs EEPIS Student Portal.</p>
+                </li>
+                <li class="mb-10 ml-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+                    <h2 class="text-lg text-justify font-medium mb-2 text-gray-700 dark:text-white-700 dark:text-white">Pilih Fitur</h2>
+                    <p class="text-justify text-gray-700 dark:text-gray-400 max-w-lg">Login menggunakan NetID dan password yang telah terdaftar.</p>
+                </li>
+                <li class="mb-10 ml-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+                    <h2 class="text-lg text-justify font-medium mb-2 text-gray-700 dark:text-white-700 dark:text-white">Upload File</h2>
+                    <p class="text-justify text-gray-700 dark:text-gray-400">Setelah login berhasil, upload file dengan klik salah satu tombol upload</p>
+                </li>
+                <li class="mb-10 ml-4">
+                    <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+                    <h2 class="text-lg text-justify font-medium mb-2 text-gray-700 dark:text-white-700 dark:text-white">Selesai!</h2>
+                    <p class="text-justify text-gray-700 dark:text-gray-400 max-w-lg">Tunggu hingga proses upload selesai, dan <span class="italic">voila! </span>sudah berhasil hosting. Sekarang kamu bisa menaruh link websitemu di bio Instagram 🤣</p>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <script src="../node_modules/flowbite/dist/flowbite.js"></script>
+    <script src="./script.js"></script>
+</body>

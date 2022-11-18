@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../dist/output.css" rel="stylesheet">
+    <link href="../node_modules/flowbite/dist/flowbite.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+    <title>Membuat Pola Asterisk Dengan Looping JS</title>
+    <script>
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark')
+    }
+    </script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900">
+    <div class="container mx-auto pb-8 bg-white dark:bg-slate-800">
+        <nav class="pt-20 md:px-10 flex gap-x-5 justify-between" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-3">
+            <li class="inline-flex items-center">
+                <a href="../index.html" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-700 dark:text-gray-400 dark:hover:text-white">
+                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
+                Home
+                </a>
+            </li>
+            <li>
+                <div class="flex items-center">
+                <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                <a href="#" class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-700 md:ml-2 dark:text-gray-400 dark:hover:text-white">Articles</a>
+                </div>
+            </li>
+            <li aria-current="page">
+                <div class="flex items-center">
+                <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                <span id="crumb_js" class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">Membuat Pola Asterisk Dengan Looping JS</span>
+                </div>
+            </li>
+            </ol>
+            <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+            </button>
+        </nav>
+  
+        <div class="pt-20 px-20 md:px-44 ">
+            <div class="pl-2 border-l-2 sm:max-w-1/2 md:max-w-3xl mx-auto border-gray-400 dark:border-gray-500">
+                <a href="">
+                    <p class="text-gray-400 dark:text-gray-500">16 September 2022</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="pt-6 px-20 md:px-44 ">
+            <h1 id="title_js" class="text-4xl sm:text-5xl sm:max-w-1/2 md:max-w-3xl mx-auto font-bold tracking-tight text-gray-800 dark:text-white">Membuat Pola Asterisk Dengan Looping JS</h1>
+        </div>
+
+        <div class="pt-8 px-20 md:px-44 ">
+            <p class="text-justify sm:max-w-1/2 md:max-w-3xl mx-auto mb-6 text-gray-700 dark:text-gray-400">Bagi seluruh siswa atau mahasiswa yang mengambil studi informatika di Indonesia, pasti pernah mendapatkan tugas mencetak pola asterisk menggunakan looping setidaknya sekali. Hal ini sudah seperti tugas <span class="italic">template</span> bagi kita ketika belajar materi looping pada pemrograman.</p>
+            <p class="text-justify sm:max-w-1/2 md:max-w-3xl mx-auto mb-6 text-gray-700 dark:text-gray-400">Nah, kebetulan Jo dapat tugas dari dosen untuk membuat artikel yang berisi tutorial cara membuat pola menggunakan JavaScript. Pada artikel ini, Jo akan membuat pola berbentuk segi empat dan segitiga dalam bentuk simbol asterisk. Kalian bebas menggunakan bahasa apa saja karena pada dasarnya memiliki logika yang sama.</p>
+            <p class="text-justify sm:max-w-1/2 md:max-w-3xl mx-auto mb-6 text-gray-700 dark:text-gray-400">Karena disini tidak membahas dari dasar, jadi Jo sarankan kalian membaca dan mempelajari <span class="italic">pre-requisite</span> dulu ya supaya dapat memahami kode dan logika yang ada dengan baik. <span class="italic">So, let's get started!</span></p>
+            <img src="../img/jbt_js.jpg" alt="" class="object-cover mx-auto w-[768px] h-auto rounded-2xl">
+            
+            <h2 class="text-lg text-justify font-medium italic sm:max-w-1/2 md:max-w-3xl mx-auto mt-8 mb-6 text-gray-700 dark:text-white">Pre-Requisite</h2>
+            <ul class="space-y-1 list-disc list-inside sm:max-w-1/2 md:max-w-3xl mx-auto text-gray-700 dark:text-gray-400">
+                <li>Konsep perulangan</li>
+                <li>Dasar HTML</li>
+                <li>DOM JavaScript</li>
+            </ul>
+
+            <h2 class="text-lg text-justify font-medium sm:max-w-1/2 md:max-w-3xl mx-auto mt-8 mb-6 text-gray-700 dark:text-white">Langkah Pertama</h2>
+            <p class="text-justify sm:max-w-1/2 md:max-w-3xl mx-auto mb-6 text-gray-700 dark:text-gray-400">Sebelum masuk ke logika perulangan, pertama kita buat terlebih dahulu struktur file HTML dan JavaScript nya. Buat satu tag dengan id tertentu, dan jangan lupa hubungkan dengan file JavaScript kalian. Untuk contohnya bisa lihat <span class="italic">code snap</span> dibawah.</p>
+            <img src="../img/html.png" alt="" class="object-cover mx-auto w-[768px] h-auto rounded-2xl">
+
+            <h2 class="text-lg text-justify font-medium sm:max-w-1/2 md:max-w-3xl mx-auto mt-8 mb-6 text-gray-700 dark:text-white">Bentuk Segi Empat</h2>
+            <p class="text-justify sm:max-w-1/2 md:max-w-3xl mx-auto mb-6 text-gray-700 dark:text-gray-400">Untuk membuat pola segi empat, kita memerlukan dua <span class="italic">statement</span> perulangan. Perulangan pertama digunakan untuk membuat baris baru ketika perulangan kedua telah selesai. Sedangkan perulangan kedua digunakan untuk mencetak <span class="italic">asterisk</span> sebanyak yang kita inginkan. Pada contoh dibawah Jo menggunakan 10 asterisk.</p>
+            <img src="../img/segiempat.png" alt="" class="object-cover mx-auto w-[768px] h-auto rounded-2xl mb-6">
+            <p class="text-justify sm:max-w-1/2 md:max-w-3xl mx-auto mb-6 text-gray-700 dark:text-gray-400">Untuk melihat hasilnya, silahkan buka file HTML tadi menggunakan web browser kalian. Output akan terlihat seperti gambar dibawah.</p>
+            <img src="../img/segiempato.png" alt="" class="border border-slate-100 object-cover mx-auto w-[768px] h-auto rounded-2xl mb-6">
+            <p class="text-justify sm:max-w-1/2 md:max-w-3xl mx-auto text-gray-700 dark:text-gray-400">Pada bentuk-bentuk selanjutnya Jo akan membagikan berbagai pola yang sudah dicoba. Kalian bisa bereksplorasi dengan logika perulangan yang telah dijelaskan sebelumnya.</p>
+
+            <h2 class="text-lg text-justify font-medium sm:max-w-1/2 md:max-w-3xl mx-auto mt-8 mb-6 text-gray-700 dark:text-white">Bentuk Segitiga Siku-Siku 1</h2>
+            <p class="text-justify sm:max-w-1/2 md:max-w-3xl mx-auto mb-6 text-gray-700 dark:text-gray-400">Sintaks kode JavaScript</p>
+            <img src="../img/segitiga1.png" alt="" class="object-cover mx-auto w-[768px] h-auto rounded-2xl mb-6">
+            <p class="text-justify sm:max-w-1/2 md:max-w-3xl mx-auto mb-6 text-gray-700 dark:text-gray-400">Output pola asterisk</p>
+            <img src="../img/segitiga1o.png" alt="" class="border border-slate-100 object-cover mx-auto w-[768px] h-auto rounded-2xl mb-6">
+
+            <h2 class="text-lg text-justify font-medium sm:max-w-1/2 md:max-w-3xl mx-auto mt-8 mb-6 text-gray-700 dark:text-white">Bentuk Segitiga Siku-Siku 2</h2>
+            <p class="text-justify sm:max-w-1/2 md:max-w-3xl mx-auto mb-6 text-gray-700 dark:text-gray-400">Sintaks kode JavaScript</p>
+            <img src="../img/segitiga2.png" alt="" class="object-cover mx-auto w-[768px] h-auto rounded-2xl mb-6">
+            <p class="text-justify sm:max-w-1/2 md:max-w-3xl mx-auto mb-6 text-gray-700 dark:text-gray-400">Output pola asterisk</p>
+            <img src="../img/segitiga2o.png" alt="" class="border border-slate-100 object-cover mx-auto w-[768px] h-auto rounded-2xl">
+
+            <h2 class="text-lg text-justify font-medium sm:max-w-1/2 md:max-w-3xl mx-auto mt-8 mb-6 text-gray-700 dark:text-white">Penutup</h2>
+            <p class="text-justify sm:max-w-1/2 md:max-w-3xl mx-auto mb-6 text-gray-700 dark:text-gray-400">Jadi itulah tutorial cara membuat pola asterisk menggunakan looping pada JavaScript. Cukup seru bukan? kita bisa bermain-main logika dan menampilkannya pada website statis sederhana. Akhir kata, terima kasih. <span class="italic"> Keep coding, and stay awesome!</span></p>
+        </div>
+    </div>
+    <script src="../node_modules/flowbite/dist/flowbite.js"></script>
+    <script src="./script.js"></script>
+</body>
