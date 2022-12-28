@@ -43,7 +43,7 @@ html {
   -o-tab-size: 4;
      tab-size: 4;
   /* 3 */
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui;
   /* 4 */
   font-feature-settings: normal;
   /* 5 */
@@ -1186,11 +1186,6 @@ input:checked + .toggle-bg {
   margin-right: 3.5rem;
 }
 
-.mx-20 {
-  margin-left: 5rem;
-  margin-right: 5rem;
-}
-
 .mt-4 {
   margin-top: 1rem;
 }
@@ -2051,6 +2046,14 @@ input:checked + .toggle-bg {
 
 .gap-4 {
   gap: 1rem;
+}
+
+.gap-1 {
+  gap: 0.25rem;
+}
+
+.gap-5 {
+  gap: 1.25rem;
 }
 
 .gap-x-0 {
@@ -3843,14 +3846,24 @@ input:checked + .toggle-bg {
     margin-right: auto;
   }
 
+  .sm\:mx-16 {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+
   .sm\:mx-12 {
     margin-left: 3rem;
     margin-right: 3rem;
   }
 
-  .sm\:mx-16 {
-    margin-left: 4rem;
-    margin-right: 4rem;
+  .sm\:mx-3 {
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+  }
+
+  .sm\:mx-5 {
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
   }
 
   .sm\:mb-0 {
@@ -4057,6 +4070,11 @@ input:checked + .toggle-bg {
     margin-bottom: 2rem;
   }
 
+  .lg\:mx-20 {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+
   .lg\:pl-16 {
     padding-left: 4rem;
   }
@@ -4067,6 +4085,11 @@ input:checked + .toggle-bg {
 }
 
 @media (min-width: 1280px) {
+  .xl\:mx-20 {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+
   .xl\:pl-24 {
     padding-left: 6rem;
   }
